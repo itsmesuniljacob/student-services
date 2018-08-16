@@ -3,6 +3,6 @@ install: true
 jdk:
 - oraclejdk8
 script:
-  - ./mvnw clean package
+  - mvn clean package
 
    
