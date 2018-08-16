@@ -2,7 +2,7 @@ dist: trusty
 language: java
 jdk:
 - oraclejdk8
-  # We now cache the Maven dependencies directory for faster builds
-sudo: false
-script: mvn clean verify
+before_install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
    
