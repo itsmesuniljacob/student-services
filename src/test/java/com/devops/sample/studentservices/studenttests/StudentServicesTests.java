@@ -1,4 +1,4 @@
-package com.devops.sample.studentservices;
+package com.devops.sample.studentservices.studenttests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class StudentServicesApplicationTests {
+public class StudentServicesTests {
 	
 	
 	private List<Topic> topics = Arrays.asList(
@@ -55,7 +55,8 @@ public class StudentServicesApplicationTests {
 		when(topicController.getAllTopics()).thenReturn(topics);
 		mockMvc.perform(get("/topics"))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+			;
 	}
  
 }
