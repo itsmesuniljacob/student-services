@@ -12,8 +12,8 @@ addons:
   sonarcloud:
     token:
       secure: $SONAR_TOKEN
-install:
-- mvn dependency:go-offline
+install: true
+#- mvn dependency:go-offline
 #script:
 #  #  - mvn clean package
 #  - mvn install -DskipTests=true
