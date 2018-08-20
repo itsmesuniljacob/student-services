@@ -11,7 +11,7 @@ cache:
 addons:
   sonarcloud:
     token:
-      secure: SONAR_TOKEN
+      secure: $SONAR_TOKEN
 install:
 - mvn dependency:go-offline
 #script:
