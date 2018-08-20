@@ -2,10 +2,14 @@ language: java
 install: true
 jdk:
 - oraclejdk8
-env:
-  - APP_ENV = "development"
+
+# cache the build tool's caches
+cache:
+  directories:
+  - $HOME/.m2
+
 script:
-  - mvn clean
-  - mvn install -DskipTests=true
+  - mvn clean package
+#  - mvn install -DskipTests=true
 
    
