@@ -1,5 +1,7 @@
-package com.devops.sample.studentservices;
+package com.devops.sample.studentservices.studenttests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class StudentServicesApplicationTests {
+public class StudentServicesTests {
 	
 	
 	private List<Topic> topics = Arrays.asList(
@@ -55,7 +57,26 @@ public class StudentServicesApplicationTests {
 		when(topicController.getAllTopics()).thenReturn(topics);
 		mockMvc.perform(get("/topics"))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+			.andExpect(jsonPath("$[0].id",Matchers.is("spring")));
+	}
+
+	@Test
+	public void getTopicByIdTest() throws Exception {
+
+		Topic topic = new Topic("Go","Go lang","Go hand book");
+		when(topicService.getTopic("Go")).thenReturn(topic);
+		mockMvc.perform(get("/topics/{id}","Go"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.id").exists())
+				.andExpect(jsonPath("$.id", Matchers.is("Go")));
+		verify(topicService,times(1)).getTopic("Go");
+		verifyNoMoreInteractions(topicService);
+	}
+
+	@Test
+	public void getTopicMethodTest() throws Exception {
+		when(topicService.getAllTopics()).thenReturn(topics);
 	}
  
 }
