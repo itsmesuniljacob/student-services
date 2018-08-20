@@ -2,10 +2,8 @@ language: java
 install: true
 jdk:
 - oraclejdk8
-cache:
-  directories:
-  - .autoconf
-  - $HOME/.m2
+env:
+  - APP_ENV = "development"
 script:
   - mvn clean
   - mvn install -DskipTests=true
