@@ -9,7 +9,7 @@ cache:
   - $HOME/.m2
 
 script:
-#  - mvn clean package
+  #  - mvn clean package
   - mvn install -DskipTests=true
 
    
