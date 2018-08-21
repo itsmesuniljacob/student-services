@@ -1,22 +1,17 @@
 language: java
-
-jdk:
-- oraclejdk8
 sudo: false
-# cache the build tool's caches
-cache:
-  directories:
-  - "$HOME/.m2/repository"
-  - "$HOME/.sonar/cache"
+install: true
 addons:
   sonarcloud:
+    organization: "xylene1980-github"
     token:
-      secure: $SONAR_TOKEN
-install: true
-#- mvn dependency:go-offline
-#script:
-#  #  - mvn clean package
-#  - mvn install -DskipTests=true
+      secure: "$SONAR_TOKEN"
+jdk:
+- oraclejdk8
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+  - '$HOME/.m2/repository'
+  - '$HOME/.sonar/cache'
    
