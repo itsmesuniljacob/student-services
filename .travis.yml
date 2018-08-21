@@ -12,6 +12,7 @@ addons:
   sonarcloud:
     branches:
     - travis
+    - master
     token:
       secure: $SONAR_TOKEN
 install: true
@@ -22,5 +23,5 @@ install: true
 script:
 #  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
   - sonar-scanner
-  - mvn install -DskipTests=true
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
    
