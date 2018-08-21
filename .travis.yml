@@ -12,7 +12,6 @@ addons:
   sonarcloud:
     branches:
     - travis
-    - master
     token:
       secure: $SONAR_TOKEN
 install: true
