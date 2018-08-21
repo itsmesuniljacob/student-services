@@ -10,6 +10,8 @@ cache:
   - "$HOME/.sonar/cache"
 addons:
   sonarcloud:
+    branches:
+    - travis
     token:
       secure: $SONAR_TOKEN
 install: true
