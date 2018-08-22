@@ -6,11 +6,6 @@ addons:
     organization: "xylene1980-github"
     token:
       secure: "$SONAR_TOKEN"
-#test change
-# sunil change
-branches:
-  only:
-  - master
 jdk:
 - oraclejdk8
 script:
