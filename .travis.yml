@@ -8,6 +8,9 @@ addons:
       secure: "$SONAR_TOKEN"
 #test change
 # sunil change
+branches:
+  only:
+  - master
 jdk:
 - oraclejdk8
 script:
