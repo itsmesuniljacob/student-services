@@ -7,8 +7,12 @@ addons:
     token:
       secure: "$SONAR_TOKEN"
 branches:
-  except:
-  - /^tr\..*/
+#  except:
+#  - /^tr\..*/
+   only:
+     - master
+   except:
+   - travis
 jdk:
 - oraclejdk8
 script:
