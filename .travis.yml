@@ -11,8 +11,6 @@ branches:
 #  - /^tr\..*/
    only:
      - master
-   except:
-   - travis
 jdk:
 - oraclejdk8
 script:
