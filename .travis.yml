@@ -6,11 +6,11 @@ addons:
     organization: "xylene1980-github"
     token:
       secure: "$SONAR_TOKEN"
-branches:
-#  except:
-#  - /^tr\..*/
-   only:
-     - master
+#branches:
+##  except:
+##  - /^tr\..*/
+#   only:
+#     - master
 jdk:
 - oraclejdk8
 script:
