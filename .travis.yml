@@ -3,11 +3,14 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: "xylene1980-github"
+    organization: "xylene1980-githubx`"
     token:
       secure: "$SONAR_TOKEN"
 jdk:
 - oraclejdk8
+branches:
+  only:
+    - travis
 script:
 - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 cache:
