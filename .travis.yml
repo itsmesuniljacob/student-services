@@ -8,6 +8,7 @@ addons:
       secure: "$SONAR_TOKEN"
 branches:
   only:
+  - travis  
   - master
 jdk:
 - oraclejdk8
